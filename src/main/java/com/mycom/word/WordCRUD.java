@@ -8,20 +8,20 @@ public class WordCRUD implements ICRUD {
     ArrayList<Word> list;
     Scanner s;
 
-    WordCRUD(Scanner s){
-        list = new ArrayList<>();
+    WordCRUD(Scanner s){        // 생성자
+        list = new ArrayList<>();       // 단어들을 저장할 곳
         this.s = s;
     }
     @Override
     public Object add() {
-        System.out.print("-> 난이도(1, 2, 3)와 새 단어를 입력하시오 : ");
-        int level = s.nextInt();
-        String word = s.nextLine();
+        System.out.print("난이도(1, 2, 3)와 새 단어를 입력하시오 : ");
+        int level = s.nextInt();        // int를 입력 받음
+        String word = s.nextLine();     // 개행문자 포함 한 줄을 입력 받음
 
         System.out.print("뜻 입력 : ");
         String meaning = s.nextLine();
 
-        return new Word(0, level, word, meaning);
+        return new Word(0, level, word, meaning);       // 입력 받은 것 return
     }
 
     public void addWord(){
@@ -47,8 +47,8 @@ public class WordCRUD implements ICRUD {
 
     public void listAll(){
         System.out.println("---------------------------------");
-        for (int i = 0; i < list.size(); i++){
-            System.out.print((i+1)
+        for (int i = 0; i < list.size(); i++){      // 단어의 개수만큼
+            System.out.print((i+1)      // 단어 번호
             + " "
             + list.get(i).toString()
             + "\n"

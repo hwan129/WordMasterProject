@@ -31,7 +31,7 @@ public class WordManager {
         while(true) {
             int menu = selectMenu();
             if (menu == 0) break;
-            else if (menu == 1){
+            if (menu == 1){
                 wordCRUD.listAll();
             }
             else if (menu == 4){
