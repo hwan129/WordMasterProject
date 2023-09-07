@@ -16,6 +16,7 @@
 * 프로그램 종
 
 ## 코드
+```Java#
 public Object add();                // 단어 추가
 public int update(Object obj);      // 단어 수정
 public int delete(Object obj);      // 단어 삭제
@@ -25,7 +26,8 @@ public void addWord();              // 단어 추가(ArrayList 이용)
 
 
 public int selectMenu();            // 메뉴 선택
-public void start();                // main에서 사
+public void start();                // main에서 사용
+```
 
 ## 개발환경, 언어
 <img src="https://img.shields.io/badge/Java-FF7F50?style=flat&logo=java&logoColor=white"/>
