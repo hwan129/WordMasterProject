@@ -31,7 +31,6 @@ public void start();                // main에서 사용
 ```
 
 ## 개발환경, 언어
-<img src="https://img.shields.io/badge/Java-FF7F50?style=flat&logo=java&logoColor=white"/>
-<img src="https://img.shields.io/badge/Git-F05032?style=flat&logo=Git&logoColor=white"/>
-<img src="https://img.shields.io/badge/JDK-FF0000?style=flat&logo=JDK&logoColor=white"/> = 17
-<img src="https://img.shields.io/badge/IntelliJ IDEA-FF0000?style=flat&logo=intellijidea&logoColor=white"/>
+- <img alt="java" src ="https://img.shields.io/badge/JAVA-FF4500.svg?&style=for-the badge&logo=java&logoColor=white"/>
+- `JDK 17`
+- <img alt="intellijidea" src ="https://img.shields.io/badge/IntelliJ IDEA-BA55D3.svg?&style=for-the badge&logo=intellijidea&logoColor=white"/>
