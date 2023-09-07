@@ -30,7 +30,10 @@ public class WordManager {
 
         while(true) {
             int menu = selectMenu();
-            if (menu == 0) break;
+            if (menu == 0) {
+                System.out.println("\n단어장을 종료합니다.");
+                break;
+            }
             if (menu == 1){         // 단어장 조회
                 wordCRUD.listAll();
             }
