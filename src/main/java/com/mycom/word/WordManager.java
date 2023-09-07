@@ -31,10 +31,10 @@ public class WordManager {
         while(true) {
             int menu = selectMenu();
             if (menu == 0) break;
-            if (menu == 1){
+            if (menu == 1){         // 단어장 조회
                 wordCRUD.listAll();
             }
-            else if (menu == 4){
+            else if (menu == 4){    // 단어 추가
                 wordCRUD.addWord();
             }
         }

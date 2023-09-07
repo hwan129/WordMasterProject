@@ -8,7 +8,7 @@ public class Word {
     private String meaning;
 
     Word(){}
-    Word(int id, int level, String word, String meaning){
+    Word(int id, int level, String word, String meaning){   // 생성자
         this.id = id;
         this.level = level;
         this.word = word;
@@ -50,12 +50,11 @@ public class Word {
     public String toString() {
 
         String slevel = "";
-        for (int i = 0; i < level; i++) slevel += "⭐";
-        String str = String.format("%-3s", slevel)
+        for (int i = 0; i < level; i++) slevel += "⭐";  // 단어의 level
+        String str = String.format("%-3s", slevel)       // 레벨, 단어, 의미를 모두 하나의 String으로 만듦
                 + String.format("%15s", word)
                 + "  "
                 + meaning;
-
         return str;
     }
 }
