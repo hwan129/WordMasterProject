@@ -28,5 +28,5 @@ public int selectMenu();            // 메뉴 선택
 public void start();                // main에서 사
 
 ## 개발환경, 언어
-<img src="https://img.shields.io/badge/java-FF7F50?style=flat-square&logo=Java&logoColor=white"/>
+<img src="https://img.shields.io/badge/Java-FF7F50?style=flat&logo=java&logoColor=white"/>
 <img src="https://img.shields.io/badge/Git-F05032?style=flat&logo=Git&logoColor=white"/>
