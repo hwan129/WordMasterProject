@@ -26,7 +26,7 @@ public class WordCRUD implements ICRUD {
 
     public void addWord(){
         Word one = (Word) add();     // Word로 리턴하기 때문에 (Word)
-        list.add(one);
+        list.add(one);              // ArrayList 끝에 단어 추가
         System.out.println("새 단어가 추가되었습니다. ");
     }
 
