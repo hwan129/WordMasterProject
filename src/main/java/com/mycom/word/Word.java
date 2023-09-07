@@ -48,9 +48,8 @@ public class Word {
 
     @Override
     public String toString() {
-
         String slevel = "";
-        for (int i = 0; i < level; i++) slevel += "⭐";  // 단어의 level
+        for (int i = 0; i < level; i++) slevel += "*";  // 단어의 level⭐
         String str = String.format("%-3s", slevel)       // 레벨, 단어, 의미를 모두 하나의 String으로 만듦
                 + String.format("%15s", word)
                 + "  "

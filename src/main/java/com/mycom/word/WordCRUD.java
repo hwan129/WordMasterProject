@@ -14,7 +14,7 @@ public class WordCRUD implements ICRUD {
     }
     @Override
     public Object add() {
-        System.out.print("난이도(1, 2, 3)와 새 단어를 입력하시오 : ");
+        System.out.print("\n난이도(1, 2, 3)와 새 단어를 입력하시오 : ");
         int level = s.nextInt();        // int를 입력 받음. 난이도
         String word = s.nextLine();     // 개행문자 포함 한 줄을 입력 받음. 단어
 
@@ -46,10 +46,11 @@ public class WordCRUD implements ICRUD {
     }
 
     public void listAll(){
+        System.out.println("\nNo Level         Word  Meaning");
         System.out.println("---------------------------------");
         for (int i = 0; i < list.size(); i++){      // 단어의 개수만큼
             System.out.print((i+1)      // 단어 번호
-            + " "
+            + "  "
             + list.get(i).toString()    // Word 클래스에서 입력 받은 단어
             + "\n"
             );

@@ -11,7 +11,7 @@ public class WordManager {
         wordCRUD = new WordCRUD(s);
     }
     public int selectMenu() {
-        System.out.print("---영단어 마스터---\n"
+        System.out.print("\n---영단어 마스터---\n"
                 + "==================\n"
                 + "1. 모든 단어 보기\n"
                 + "2. 난이도별 단어 보기\n"
