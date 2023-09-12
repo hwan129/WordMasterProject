@@ -35,9 +35,16 @@ public class WordManager {
             }
             if (menu == 1){         // 단어장 조회
                 wordCRUD.listAll();
-            }
-            else if (menu == 4){    // 단어 추가
+            } else if (menu == 2) {
+
+            } else if (menu == 3) {
+
+            } else if (menu == 4){    // 단어 추가
                 wordCRUD.addWord();
+            } else if (menu == 5) {   // 단어 수정
+                wordCRUD.update();
+            } else if (menu == 6){
+
             }
         }
 
