@@ -37,8 +37,8 @@ public class WordCRUD implements ICRUD {        // CRUD 작성
         String searchWord = s.next();
         s.nextLine();
 
-        if(!list(searchWord).isEmpty()) {
-            //ArrayList<Integer> searchlist = list(searchWord);
+        ArrayList<Integer> searchList = listAll(searchWord);
+        if(!searchList.isEmpty()) {
             System.out.print("수정할 단어 번호 입력 : ");
             int id = s.nextInt();
             s.nextLine();
@@ -50,7 +50,7 @@ public class WordCRUD implements ICRUD {        // CRUD 작성
             System.out.print("뜻 입력 : ");
             String meaning = s.nextLine();
 
-            Word wordlist = list.get(list(searchWord).get(id - 1));
+            Word wordlist = list.get(searchList.get(id - 1));
             wordlist.setLevel(level);
             wordlist.setWord(word);
             wordlist.setMeaning(meaning);
@@ -60,20 +60,22 @@ public class WordCRUD implements ICRUD {        // CRUD 작성
         }
     }
 
-    public ArrayList<Integer> list(String searchWord) {        // 단어 검색
+    public ArrayList<Integer> listAll(String searchWord) {        // 단어 검색
         ArrayList<Integer> searchList = new ArrayList<>();
 
         System.out.println("\nNo Level         Word  Meaning");
         System.out.println("---------------------------------");
+        int num = 0;
         for (int i = 0; i < list.size(); i++){      // 단어의 개수만큼
             String word = list.get(i).toString();
             if (word.toUpperCase().contains(searchWord.toUpperCase())) {
-                System.out.print((i)      // 단어 번호
+                System.out.print((num+1)      // 단어 번호
                         + "  "
                         + list.get(i).toString()    // Word 클래스에서 입력 받은 단어
                         + "\n"
                 );
                 searchList.add(i);
+                num ++;
             }
         }
         System.out.println("---------------------------------");
@@ -82,8 +84,30 @@ public class WordCRUD implements ICRUD {        // CRUD 작성
     }
 
     @Override
-    public int delete(Object obj) {
-        return 0;
+    public void delete() {
+        listAll();
+        System.out.print("\n삭제할 단어 검색 : ");
+        String searchWord = s.next();
+        s.nextLine();
+
+        ArrayList<Integer> searchList = listAll(searchWord);
+        if(!searchList.isEmpty()) {
+            System.out.print("삭제할 단어 번호 입력 : ");
+            int id = s.nextInt();
+            s.nextLine();
+
+            System.out.print("단어를 삭제하시겠습니까? (Y/N) : ");
+            String ans = s.nextLine();
+
+            if (ans.toUpperCase().contains("Y")){
+                list.remove((int) searchList.get(id - 1));
+                System.out.println("단어 삭제를 완료했습니다.");
+            }else {
+                System.out.println("삭제를 취소합니다.");
+            }
+        }else{
+            System.out.println("단어를 찾지 못했습니다.");
+        }
     }
 
     @Override

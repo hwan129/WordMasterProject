@@ -44,9 +44,10 @@ public class WordManager {
             } else if (menu == 5) {   // 단어 수정
                 wordCRUD.update();
             } else if (menu == 6){
+                wordCRUD.delete();
+            } else if (menu == 7){
 
             }
         }
-
     }
 }
