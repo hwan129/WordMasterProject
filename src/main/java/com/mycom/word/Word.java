@@ -56,4 +56,7 @@ public class Word {
                 + meaning;
         return str;
     }
+    public String toFileSave(){
+        return this.level + "|" + this.word.trim() + "|" + this.meaning;
+    }
 }

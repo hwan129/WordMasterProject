@@ -1,12 +1,12 @@
 package com.mycom.word;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Scanner;
+import java.io.*;
+import java.util.*;
 
 public class WordCRUD implements ICRUD {        // CRUD 작성
     ArrayList<Word> list;   // Word를 ArrayList에 저장
     Scanner s;
+    String fileName = "Dictionary.txt";
 
     WordCRUD(Scanner s){        // 생성자
         list = new ArrayList<>();       // 단어들을 저장할 곳
@@ -14,8 +14,11 @@ public class WordCRUD implements ICRUD {        // CRUD 작성
     }
     @Override
     public Object add() {           // 새로운 단어 정보 받기
-        System.out.print("\n난이도(1, 2, 3)와 새 단어를 입력하시오 : ");
+        System.out.print("\n난이도(1, 2, 3) : ");
         int level = s.nextInt();        // int를 입력 받음. 난이도
+        s.nextLine();
+
+        System.out.print("새 단어 : ");
         String word = s.nextLine();     // 개행문자 포함 한 줄을 입력 받음. 단어
 
         System.out.print("뜻 입력 : ");
@@ -37,17 +40,20 @@ public class WordCRUD implements ICRUD {        // CRUD 작성
         String searchWord = s.next();
         s.nextLine();
 
-        ArrayList<Integer> searchList = listAll(searchWord);
+        ArrayList<Integer> searchList = searchList(searchWord);
         if(!searchList.isEmpty()) {
             System.out.print("수정할 단어 번호 입력 : ");
             int id = s.nextInt();
             s.nextLine();
 
-            System.out.print("\n난이도(1, 2, 3)와 단어를 입력하시오 : ");
+            System.out.print("\n수정) 난이도(1, 2, 3) : ");
             int level = s.nextInt();
+            s.nextLine();
+
+            System.out.print("수정) 단어 : ");
             String word = s.nextLine();
 
-            System.out.print("뜻 입력 : ");
+            System.out.print("수정) 뜻 입력 : ");
             String meaning = s.nextLine();
 
             Word wordlist = list.get(searchList.get(id - 1));
@@ -60,7 +66,7 @@ public class WordCRUD implements ICRUD {        // CRUD 작성
         }
     }
 
-    public ArrayList<Integer> listAll(String searchWord) {        // 단어 검색
+    public ArrayList<Integer> searchList(String searchWord) {        // 단어 검색. listAll 사용
         ArrayList<Integer> searchList = new ArrayList<>();
 
         System.out.println("\nNo Level         Word  Meaning");
@@ -90,7 +96,7 @@ public class WordCRUD implements ICRUD {        // CRUD 작성
         String searchWord = s.next();
         s.nextLine();
 
-        ArrayList<Integer> searchList = listAll(searchWord);
+        ArrayList<Integer> searchList = searchList(searchWord);
         if(!searchList.isEmpty()) {
             System.out.print("삭제할 단어 번호 입력 : ");
             int id = s.nextInt();
@@ -110,12 +116,7 @@ public class WordCRUD implements ICRUD {        // CRUD 작성
         }
     }
 
-    @Override
-    public void selectOne(int id) {
-
-    }
-
-    public void listAll(){
+    public void listAll(){          // 전체 단어장 출력
         System.out.println("\nNo Level         Word  Meaning");
         System.out.println("---------------------------------");
         for (int i = 0; i < list.size(); i++){      // 단어의 개수만큼
@@ -126,5 +127,84 @@ public class WordCRUD implements ICRUD {        // CRUD 작성
             );
         }
         System.out.println("---------------------------------");
+    }
+
+    public void saveFile(){
+        try {
+            FileWriter fileWriter = new FileWriter(fileName);       // 파일에 쓰기
+            for(Word one : list){       // list에 있는것 옮기기
+                fileWriter.write(one.toFileSave() + "\n");      // word에서 정의한 toFileSave 사용. 레벨, 단어, 뜻 반환. 여기서 다시 레벨, 단어, 뜻을 정의하지 않기 위해
+            }
+            fileWriter.close();     // 파일 닫기
+
+            System.out.println("\n파일이 " + fileName + "에 저장되었습니다.");
+        } catch (IOException e) {       // 예외 처리
+            e.printStackTrace();
+            System.err.println("파일을 저장하는데 오류가 발생했습니다.\n");
+        }
+    }
+
+    public void loadFile(){
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(fileName));
+            String line;
+            int num = 0;        // 단어 개수
+
+            while (true) {
+                line = reader.readLine();
+                if(line == null) break;
+
+                String wordData[] = line.split("\\|");  // |로 짤라서 load
+                int level = Integer.parseInt(wordData[0]);
+                String word = wordData[1];
+                String meaning = wordData[2];
+                list.add(new Word(0, level, word, meaning));
+                num ++;
+            }
+            System.out.println("\n--- 영어 단어 " + num + "개 로딩 ---");
+
+            reader.close();
+        } catch (IOException e) {
+            e.printStackTrace();
+            System.err.println("파일을 로드하는데 오류가 발생했습니다.\n");
+        }
+    }
+    public void searchLevel(){
+        System.out.print("검색할 레벨 : ");
+        int level = s.nextInt();
+
+        searchList(level);
+    }
+
+    public ArrayList<Integer> searchList(int searchLevel) {        // 레벨 검색. listAll 사용
+        ArrayList<Integer> searchList = new ArrayList<>();
+
+        System.out.println("\nNo Level         Word  Meaning");
+        System.out.println("---------------------------------");
+        int num = 0;
+        for (int i = 0; i < list.size(); i++){      // 단어의 개수만큼
+            int level = list.get(i).getLevel();
+            if (searchLevel == level) {
+                System.out.print((num+1)      // 단어 번호
+                        + "  "
+                        + list.get(i).toString()    // Word 클래스에서 입력 받은 단어
+                        + "\n"
+                );
+                searchList.add(i);
+                num ++;
+            }
+        }
+        System.out.println("---------------------------------");
+
+        return searchList;
+    }
+
+    public void searchWord(){
+        listAll();
+        System.out.print("\n단어 검색 : ");
+        String searchWord = s.next();
+        s.nextLine();
+
+        searchList(searchWord);
     }
 }
