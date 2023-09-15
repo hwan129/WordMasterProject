@@ -1,7 +1,11 @@
 package com.mycom.word;
 
-import java.io.*;
-import java.util.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.FileWriter;
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Scanner;
 
 public class WordCRUD implements ICRUD {        // CRUD 작성
     ArrayList<Word> list;   // Word를 ArrayList에 저장
