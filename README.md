@@ -1,4 +1,5 @@
-![collaboration-1106196_640](https://github.com/hwan129/WordMasterProject/assets/130568725/f3270ff3-fe5a-4a88-a3c7-6a92fe26cfc0)
+
+![영어단어](https://github.com/hwan129/WordMasterProject/assets/130568725/ad4aa752-34ea-418e-a247-60d201563ff8)
 
 # Word Master Project
 
@@ -12,43 +13,50 @@
 ## 기능
 * 단어장 조회
   
-  ![image](https://github.com/hwan129/WordMasterProject/assets/130568725/2eef1c68-84a0-48fc-8961-34a6f1ca0c36)
+  ![wordList1](https://github.com/hwan129/WordMasterProject/assets/130568725/f3b99917-c7d2-4042-bfca-dbc0f6b91fe3)
 * 난이도에 따른 단어 조회
   
-  ![image](https://github.com/hwan129/WordMasterProject/assets/130568725/585e5991-1115-41ac-a35a-bdfeb46e32eb)
+  ![searchLevel](https://github.com/hwan129/WordMasterProject/assets/130568725/135f7943-73f7-480e-8761-e4609bcd90e6)
 * 단어 검색
   
-  ![image](https://github.com/hwan129/WordMasterProject/assets/130568725/8583465b-f0a4-4035-9912-cd32380c48ef)
+  ![searchWord1](https://github.com/hwan129/WordMasterProject/assets/130568725/07661676-eb9a-48d1-a2fb-b5cd48e0bb1e)
 
-  ![image](https://github.com/hwan129/WordMasterProject/assets/130568725/1161e352-92b3-4680-93b8-41eb79d55da3)
+
+  ![searchWord2](https://github.com/hwan129/WordMasterProject/assets/130568725/5ca43112-acb0-4b52-8b94-5b5de531bca4)
 * 단어 추가
 
-  ![image](https://github.com/hwan129/WordMasterProject/assets/130568725/e913b6ea-ddef-4143-9324-8466ff4ac6f4)
+  ![addWord](https://github.com/hwan129/WordMasterProject/assets/130568725/fea40eae-f890-4884-b303-7f0d6e689141)
 * 단어 수정
 
-  ![image](https://github.com/hwan129/WordMasterProject/assets/130568725/8a932def-44bc-4545-8a97-bd21ba2331e7)
 
-  ![image](https://github.com/hwan129/WordMasterProject/assets/130568725/495617b7-2dcc-465d-9938-b3a363f2a81e)
+  ![updateWord](https://github.com/hwan129/WordMasterProject/assets/130568725/67f83b04-79e9-435c-9ae3-236e36464f09)
 
-  ![image](https://github.com/hwan129/WordMasterProject/assets/130568725/86c500de-2904-4aba-8e45-042f3fcadadc)
 
+  ![updateWord2](https://github.com/hwan129/WordMasterProject/assets/130568725/4d2253b5-8b35-47fb-97cd-ad99c1952c2f)
+
+
+  ![updateWord3](https://github.com/hwan129/WordMasterProject/assets/130568725/4ce2c17a-2a14-401f-9dee-31185a4e7d4c)
 * 단어 삭제
 
-  ![image](https://github.com/hwan129/WordMasterProject/assets/130568725/d26fcba5-3cc8-434b-9c35-3acb0f9ced6f)
+  
+  ![deleteWord1](https://github.com/hwan129/WordMasterProject/assets/130568725/5667634c-a8aa-41f7-ad9c-200437139ecf)
 
-  ![image](https://github.com/hwan129/WordMasterProject/assets/130568725/0df653ec-db69-4620-b5be-c7873367e63b)
+  
+  ![deleteWord2](https://github.com/hwan129/WordMasterProject/assets/130568725/06a6f371-af4f-458a-8baf-785a4ce75300)
 
-  ![image](https://github.com/hwan129/WordMasterProject/assets/130568725/e52f302f-0ba4-4779-86e1-8903189bf7a7)
-
+  
+  ![deleteWord3](https://github.com/hwan129/WordMasterProject/assets/130568725/7ae8cf73-801b-4181-a382-20fcf13b1ea2)
 * 단어장 파일 저장
 
-  ![image](https://github.com/hwan129/WordMasterProject/assets/130568725/4983dfcc-933d-4e0e-bdf2-222904634418)
+  
+  ![saveWord](https://github.com/hwan129/WordMasterProject/assets/130568725/84950b3f-155a-43ae-8207-5c1bef519e1e)
 
-  ![image](https://github.com/hwan129/WordMasterProject/assets/130568725/282a434a-1bcf-4236-b4d9-3313922f1975)
-
+  
+  ![saveWord2](https://github.com/hwan129/WordMasterProject/assets/130568725/73afafd2-536f-4009-9eff-1ebbd7a786c4)
 * 프로그램 종료
 
-  ![image](https://github.com/hwan129/WordMasterProject/assets/130568725/f40b07eb-f93e-45f6-b7b8-e560cefa858e)
+
+  ![exitProgram](https://github.com/hwan129/WordMasterProject/assets/130568725/15f84339-8e74-425b-a308-f9a918ebdc65)
 
 
 ## 코드
